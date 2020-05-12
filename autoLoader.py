@@ -10,6 +10,8 @@ Program will create autoLoaderSave.txt that will store your selections.
 Compiled using pyinstaller, working on Windows 10.
 cmd: pyinstaller --noconsole --onefile --icon="path to icon" autoLoader.py
 
+To clear your app list just delete "autoLoaderSave.txt".
+
 Functionality that could be added: remove applications from list.
 '''
 
@@ -57,11 +59,11 @@ def RunPrograms():
     #opener ="open" if sys.platform == "darwin" else "xdg-open"	
     
     for exe in programs:
-	    #windows
-	    os.startfile(exe)
-	    
-	    #linux/mac (needs testing on mac)
-	    #subprocess.call([opener, exe])
+        #windows
+        os.startfile(exe)
+
+        #linux/mac (needs testing on mac)
+        #subprocess.call([opener, exe])
 
 def save():
     saveFile = open('autoLoaderSave.txt', 'w')
@@ -96,4 +98,3 @@ load()
 root.iconbitmap('./icon.ico')
 root.mainloop()
 save()
-
